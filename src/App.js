@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Tabs from './views/Tabs';
+import React,{ useState } from 'react';
 
 function App() {
+
+  const [tabs, setTabs] = useState([
+    {
+      nombre: "Tab 1",
+      mensaje: "Este es el tab 1",
+      seleccionado: "selected"
+    },
+    {
+      nombre:"Tab 2",
+      mensaje:"Este es el tab 2",
+      seleccionado: ""
+      
+    }
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Tabs tabs={tabs}/>
   );
 }
 
